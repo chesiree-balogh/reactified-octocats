@@ -8,9 +8,9 @@ import React, { Component } from 'react'
 export const Octocat = (props) => {
   return (
     <li>
-      <setion>
+      <section>
         <img src={props.imageSource} />
-      </setion>
+      </section>
       <section>
         <p class="black">#{props.octocatNumber}</p>
         <p class="bold">{props.octocatName}</p>
@@ -23,9 +23,9 @@ export const Octocat = (props) => {
 //   render() {
 //     return (
 //       <li>
-//         <setion>
+//         <section>
 //           <img src={this.props.imageSource} />
-//         </setion>
+//         </section>
 //         <section>
 //           <p class="black">#{this.props.octocatNumber}</p>
 //           <p class="bold">{this.props.octocatName}</p>
