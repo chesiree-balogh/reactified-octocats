@@ -11,16 +11,20 @@ import Labtocat from '../images/oct7.png'
 import Spidertocat from '../images/oct2.png'
 import Octofez from '../images/oct1.png'
 
+// This component requires three props
+// imageSource - What is the image to show
+// octocatNumber - What is the cat number to show
+// octocatName - What is the cat name to show
 class Octocat extends Component {
   render() {
     return (
       <li>
         <setion>
-          <img src={surftocat} />
+          <img src={this.props.imageSource} />
         </setion>
         <section>
-          <p class="black">#140:</p>
-          <p class="bold">Surftocat</p>
+          <p class="black">#{this.props.octocatNumber}</p>
+          <p class="bold">{this.props.octocatName}</p>
         </section>
       </li>
     )
@@ -32,44 +36,35 @@ export class Octocats extends Component {
     return (
       <section class="octocats">
         <ul>
-          <Octocat />
+          <Octocat
+            imageSource={surftocat}
+            octocatNumber="140"
+            octocatName="Surftocat"
+          />
 
-          <li>
-            <section>
-              <img src={Dinotocat} />
-            </section>
-            <section>
-              <p class="black">#130:</p>
-              <p class="bold">Dinotocat</p>
-            </section>
-          </li>
-          <li>
-            <section>
-              <img src="../images/oct8.png" />
-            </section>
-            <section>
-              <p class="black">#122:</p>
-              <p class="bold">Filmtocat</p>
-            </section>
-          </li>
-          <li>
-            <section>
-              <img src="../images/oct6.png" />
-            </section>
-            <section>
-              <p class="black">#118:</p>
-              <p class="bold">Jetpacktocat</p>
-            </section>
-          </li>
-          <li>
-            <section>
-              <img src="../images/oct11.png" />
-            </section>
-            <section>
-              <p class="black">#117:</p>
-              <p class="bold">Minertocat</p>
-            </section>
-          </li>
+          <Octocat
+            imageSource={Dinotocat}
+            octocatNumber="130"
+            octocatName="Dinotocat"
+          />
+
+          <Octocat
+            octocatNumber="122"
+            octocatName="Filmtocat"
+            imageSource={Filmtocat}
+          />
+
+          <Octocat
+            octocatNumber="118"
+            octocatName="Jetpacktocat"
+            imageSource={Jetpacktocat}
+          />
+
+          <Octocat
+            octocatNumber="117"
+            octocatName="Minertocat"
+            imageSource={Minertocat}
+          />
           <li>
             <section>
               <img src="../images/oct5.png" />
