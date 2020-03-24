@@ -32,102 +32,75 @@ class Octocat extends Component {
 }
 
 export class Octocats extends Component {
+  // State is going to contain a key named "octocats"
+  // that will store an array of information about many octocats
+  state = {
+    octocats: [
+      {
+        //details about the first cat
+        imageSource: surftocat,
+        octocatNumber: '140',
+        octocatName: 'Surftocat',
+      },
+
+      {
+        // details about the second cat
+        imageSource: Dinotocat,
+        octocatNumber: '130',
+        octocatName: 'Dinotocat',
+      },
+
+      {
+        imageSource: Filmtocat,
+        octocatNumber: '122',
+        octocatName: 'Filmtocat',
+      },
+
+      {
+        imageSource: Jetpacktocat,
+        octocatNumber: '118',
+        octocatName: 'Jetpacktocat',
+      },
+    ],
+  }
+
   render() {
     return (
       <section class="octocats">
         <ul>
-          <Octocat
-            imageSource={surftocat}
-            octocatNumber="140"
-            octocatName="Surftocat"
-          />
+          {//loop through this.state.octocats
+          // for each object in that array, turn that into a <Octocat/>
 
-          <Octocat
-            imageSource={Dinotocat}
-            octocatNumber="130"
-            octocatName="Dinotocat"
-          />
+          // state
+          //   |
+          //   |     array inside state
+          //   |        |
+          //   |        |          each element of the array, one at a time
+          //   |        |             |
+          //   v        v             v
+          this.state.octocats.map((octocat) => {
+            // Inside here `octocat` is something like
+            //
+            //    {
+            //      //details about the first cat
+            //      imageSource: surftocat,
+            //      octocatNumber: '140',
+            //      octocatName: 'Surftocat',
+            //    },
 
-          <Octocat
-            octocatNumber="122"
-            octocatName="Filmtocat"
-            imageSource={Filmtocat}
-          />
-
-          <Octocat
-            octocatNumber="118"
-            octocatName="Jetpacktocat"
-            imageSource={Jetpacktocat}
-          />
-
-          <Octocat
-            octocatNumber="117"
-            octocatName="Minertocat"
-            imageSource={Minertocat}
-          />
-          <li>
-            <section>
-              <img src="../images/oct5.png" />
-            </section>
-            <section>
-              <p class="black">#116:</p>
-              <p class="bold">Mountietocat</p>
-            </section>
-          </li>
-          <li>
-            <section>
-              <img src="../images/oct4.gif" />
-            </section>
-            <section>
-              <p class="black">#110:</p>
-              <p class="bold">Grinchtocat</p>
-            </section>
-          </li>
-          <li>
-            <section>
-              <img src="../images/oct3.png" />
-            </section>
-            <section>
-              <p class="black">#108</p>
-              <p class="bold">Yaktocat</p>
-            </section>
-          </li>
-          <li>
-            <section>
-              <img src="../images/oct7.png" />
-            </section>
-            <section>
-              <p class="black">#105:</p>
-              <p class="bold">Labtocat</p>
-            </section>
-          </li>
-          <li>
-            <section>
-              <img src="../images/oct2.png" />
-            </section>
-            <section>
-              <p class="black">#88:</p>
-              <p class="bold">Spidertocat</p>
-            </section>
-          </li>
-          <li>
-            <section>
-              <img src="../images/oct1.png" />
-            </section>
-            <section>
-              <p class="black">#78:</p>
-              <p class="bold">Octofez</p>
-            </section>
-          </li>
-          <li>
-            <section>
-              <img src="../images/oct12.jpg" />
-            </section>
-            <section>
-              <p class="black">#55:</p>
-              <p class="bold">Octocat De Los Muertos</p>
-            </section>
-          </li>
+            // So... lets make a new <Octocat/> component
+            //       but feed it the needed `props`
+            //
+            //       We get those values from our `octocat`
+            //       which comes from our array
+            return (
+              <Octocat
+                ocotocatNumber={octocat.octocatNumber}
+                octocatName={octocat.octocatName}
+                imageSource={octocat.imageSource}
+              />
+            )
+          })}
         </ul>
       </section>
     )
