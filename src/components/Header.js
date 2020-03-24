@@ -5,21 +5,21 @@ export const Header = () => {
   return (
     <header>
       <nav>
-        <ul class="leftNav">
+        <ul className="leftNav">
           <img
-            class="logo"
+            className="logo"
             src={githubMark}
             alt="Github Logo"
             height="32"
             width="32"
             margin="8"
           />
-          <li class="octodex">Octodex</li>
-          <li class="home">Home</li>
-          <li class="faq">FAQ</li>
+          <li className="octodex">Octodex</li>
+          <li className="home">Home</li>
+          <li className="faq">FAQ</li>
         </ul>
 
-        <ul class="rightNav">
+        <ul className="rightNav">
           <li>Follow us on Twitter</li>
         </ul>
       </nav>
@@ -32,21 +32,21 @@ export const Header = () => {
 //     return (
 //       <header>
 //         <nav>
-//           <ul class="leftNav">
+//           <ul className="leftNav">
 //             <img
-//               class="logo"
+//               className="logo"
 //               src={githubMark}
 //               alt="image"
 //               height="32"
 //               width="32"
 //               margin="8"
 //             />
-//             <li class="octodex">Octodex</li>
-//             <li class="home">Home</li>
-//             <li class="faq">FAQ</li>
+//             <li className="octodex">Octodex</li>
+//             <li className="home">Home</li>
+//             <li className="faq">FAQ</li>
 //           </ul>
 
-//           <ul class="rightNav">
+//           <ul className="rightNav">
 //             <li>Follow us on Twitter</li>
 //           </ul>
 //         </nav>

@@ -51,7 +51,7 @@ export const Octocats = () => {
   )
 
   return (
-    <section class="octocats">
+    <section className="octocats">
       <ul>
         {arrayOfOctocats.map((octocat) => {
           return (
@@ -107,7 +107,7 @@ export const Octocats = () => {
 
 //   render() {
 //     return (
-//       <section class="octocats">
+//       <section className="octocats">
 //         <ul>
 //           {//loop through this.state.octocats
 //           // for each object in that array, turn that into a <Octocat/>

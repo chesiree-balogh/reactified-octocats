@@ -12,8 +12,8 @@ export const Octocat = (props) => {
         <img alt={props.octocatName} src={props.imageSource} />
       </section>
       <section>
-        <p class="black">#{props.octocatNumber}</p>
-        <p class="bold">{props.octocatName}</p>
+        <p className="black">#{props.octocatNumber}</p>
+        <p className="bold">{props.octocatName}</p>
       </section>
     </li>
   )
@@ -27,8 +27,8 @@ export const Octocat = (props) => {
 //           <img src={this.props.imageSource} />
 //         </section>
 //         <section>
-//           <p class="black">#{this.props.octocatNumber}</p>
-//           <p class="bold">{this.props.octocatName}</p>
+//           <p className="black">#{this.props.octocatNumber}</p>
+//           <p className="bold">{this.props.octocatName}</p>
 //         </section>
 //       </li>
 //     )
