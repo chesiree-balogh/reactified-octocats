@@ -12,30 +12,42 @@ export const Octocats = () => {
   // }
   const [arrayOfOctocats, setArrayOfOctocats] = useState([])
 
+  const fetchData = async () => {
+    // Gets called the first time our component is mounted
+    console.log('Using the effect')
+
+    const response = await fetch('https://sdg-octodex.herokuapp.com/')
+    const jsonDataFromTheApi = await response.json()
+    setArrayOfOctocats(jsonDataFromTheApi.data)
+
+    // fetch('https://sdg-octodex.herokuapp.com/')
+    // .then((response) => {
+    //   // When the fetch is done this will happen
+    //   // Turn the response into json
+    //   //
+    //   // But this take a second (or three) and THIS will happen
+    //   // in the background
+    //   return response.json()
+    // })
+    // .then((jsonDataFromTheAPI) => {
+    //   // FINALLY, we have the JSON from the API
+    //   console.log(jsonDataFromTheAPI)
+
+    //   setArrayOfOctocats(jsonDataFromTheAPI.data)
+    // })
+  }
+
   useEffect(
-    async () => {
-      // Gets called the first time our component is mounted
-      console.log('Using the effect')
-
-      const response = await fetch('https://sdg-octodex.herokuapp.com/')
-      const jsonDataFromTheApi = await response.json()
-      setArrayOfOctocats(jsonDataFromTheApi.data)
-
-      // fetch('https://sdg-octodex.herokuapp.com/')
-      // .then((response) => {
-      //   // When the fetch is done this will happen
-      //   // Turn the response into json
-      //   //
-      //   // But this take a second (or three) and THIS will happen
-      //   // in the background
-      //   return response.json()
-      // })
-      // .then((jsonDataFromTheAPI) => {
-      //   // FINALLY, we have the JSON from the API
-      //   console.log(jsonDataFromTheAPI)
-
-      //   setArrayOfOctocats(jsonDataFromTheAPI.data)
-      // })
+    () => {
+      // Moved all the fetching to a function
+      // This is because `useEffect` doesn't like
+      // being made `async` -- but is ok with us
+      // CALLING a function that is async.
+      //
+      // Plus it is slightly better practice to
+      // have the fetching happen in a function
+      // dedicated to that.
+      fetchData()
     },
     [
       /* blank array tells useEffect not to fire again */
