@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 // This component requires three props
 // imageSource - What is the image to show
@@ -9,7 +9,7 @@ export const Octocat = (props) => {
   return (
     <li>
       <section>
-        <img src={props.imageSource} />
+        <img alt={props.octocatName} src={props.imageSource} />
       </section>
       <section>
         <p class="black">#{props.octocatNumber}</p>
