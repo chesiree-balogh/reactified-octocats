@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import githubMark from '../images/GitHub-Mark-120px-plus.png'
 
 export const Header = () => {
@@ -9,7 +9,7 @@ export const Header = () => {
           <img
             class="logo"
             src={githubMark}
-            alt="image"
+            alt="Github Logo"
             height="32"
             width="32"
             margin="8"
