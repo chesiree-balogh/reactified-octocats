@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import surftocat from '../images/oct10.png'
-import Dinotocat from '../images/oct9.png'
-import Filmtocat from '../images/oct8.png'
-import Jetpacktocat from '../images/oct6.png'
 
 import { Octocat } from './Octocat'
 
