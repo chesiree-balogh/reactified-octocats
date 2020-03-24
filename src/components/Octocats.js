@@ -56,6 +56,11 @@ export const Octocats = () => {
         {arrayOfOctocats.map((octocat) => {
           return (
             <Octocat
+              // Every react component used inside a `map` has to have
+              // a unique key. This is so react can keep track of them
+              // when updating the page. Since every octocat has a unique
+              // `number` we will just use that as our key! Handy!
+              key={octocat.number}
               octocatNumber={octocat.number}
               octocatName={octocat.name}
               imageSource={octocat.image}
