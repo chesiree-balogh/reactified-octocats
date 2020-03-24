@@ -3,33 +3,8 @@ import surftocat from '../images/oct10.png'
 import Dinotocat from '../images/oct9.png'
 import Filmtocat from '../images/oct8.png'
 import Jetpacktocat from '../images/oct6.png'
-import Minertocat from '../images/oct11.png'
-import Mountietocat from '../images/oct5.png'
-import Grinchtocat from '../images/oct4.gif'
-import Yaktocat from '../images/oct3.png'
-import Labtocat from '../images/oct7.png'
-import Spidertocat from '../images/oct2.png'
-import Octofez from '../images/oct1.png'
 
-// This component requires three props
-// imageSource - What is the image to show
-// octocatNumber - What is the cat number to show
-// octocatName - What is the cat name to show
-class Octocat extends Component {
-  render() {
-    return (
-      <li>
-        <setion>
-          <img src={this.props.imageSource} />
-        </setion>
-        <section>
-          <p class="black">#{this.props.octocatNumber}</p>
-          <p class="bold">{this.props.octocatName}</p>
-        </section>
-      </li>
-    )
-  }
-}
+import { Octocat } from './Octocat'
 
 export class Octocats extends Component {
   // State is going to contain a key named "octocats"
