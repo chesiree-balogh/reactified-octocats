@@ -11,21 +11,29 @@ import Labtocat from '../images/oct7.png'
 import Spidertocat from '../images/oct2.png'
 import Octofez from '../images/oct1.png'
 
+class Octocat extends Component {
+  render() {
+    return (
+      <li>
+        <setion>
+          <img src={surftocat} />
+        </setion>
+        <section>
+          <p class="black">#140:</p>
+          <p class="bold">Surftocat</p>
+        </section>
+      </li>
+    )
+  }
+}
+
 export class Octocats extends Component {
   render() {
     return (
       <section class="octocats">
         <ul>
-          <li>
-            <setion>
-              {' '}
-              <img src={surftocat} />
-            </setion>
-            <section>
-              <p class="black">#140:</p>
-              <p class="bold">Surftocat</p>
-            </section>
-          </li>
+          <Octocat />
+
           <li>
             <section>
               <img src={Dinotocat} />
