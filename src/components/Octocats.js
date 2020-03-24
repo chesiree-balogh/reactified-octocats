@@ -10,33 +10,33 @@ export class Octocats extends Component {
   // State is going to contain a key named "octocats"
   // that will store an array of information about many octocats
   state = {
-    octocats: [
-      {
-        //details about the first cat
-        imageSource: surftocat,
-        octocatNumber: '140',
-        octocatName: 'Surftocat',
-      },
+    data: [],
+  }
 
-      {
-        // details about the second cat
-        imageSource: Dinotocat,
-        octocatNumber: '130',
-        octocatName: 'Dinotocat',
-      },
+  componentDidMount() {
+    // Called the first time the component is put on screen
+    console.log('Octocats is mounted on the page')
 
-      {
-        imageSource: Filmtocat,
-        octocatNumber: '122',
-        octocatName: 'Filmtocat',
-      },
+    // This is where we can fetch the data
+    fetch('https://sdg-octodex.herokuapp.com/')
+      .then((response) => {
+        // When the fetch is done this will happen
+        // Turn the response into json
+        //
+        // But this take a second (or three) and THIS will happen
+        // in the background
+        return response.json()
+      })
+      .then((jsonDataFromTheAPI) => {
+        // FINALLY, we have the JSON from the API
+        console.log(jsonDataFromTheAPI)
 
-      {
-        imageSource: Jetpacktocat,
-        octocatNumber: '118',
-        octocatName: 'Jetpacktocat',
-      },
-    ],
+        this.setState(jsonDataFromTheAPI)
+      })
+
+    // Can't use the data here because fetch is happening in the background
+
+    console.log('After fetch')
   }
 
   render() {
@@ -53,14 +53,14 @@ export class Octocats extends Component {
           //   |        |          each element of the array, one at a time
           //   |        |             |
           //   v        v             v
-          this.state.octocats.map((octocat) => {
+          this.state.data.map((octocat) => {
             // Inside here `octocat` is something like
             //
             //    {
             //      //details about the first cat
-            //      imageSource: surftocat,
-            //      octocatNumber: '140',
-            //      octocatName: 'Surftocat',
+            //      image: surftocat,
+            //      number: '140',
+            //      name: 'Surftocat',
             //    },
 
             // So... lets make a new <Octocat/> component
@@ -70,9 +70,9 @@ export class Octocats extends Component {
             //       which comes from our array
             return (
               <Octocat
-                ocotocatNumber={octocat.octocatNumber}
-                octocatName={octocat.octocatName}
-                imageSource={octocat.imageSource}
+                octocatNumber={octocat.number}
+                octocatName={octocat.name}
+                imageSource={octocat.image}
               />
             )
           })}
